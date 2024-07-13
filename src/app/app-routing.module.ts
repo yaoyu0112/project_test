@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+// Import components or pages
+import { PlatformComponent } from './main/platform/platform.component';
+import { LoginComponent } from './main/login/login.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/main/login', pathMatch: 'full' }, // 預設路由到 login
+  { path: 'main/platform', component: PlatformComponent },
+  { path: 'main/login', component: LoginComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
